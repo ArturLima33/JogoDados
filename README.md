@@ -6,7 +6,7 @@ Um jogo competitivo de sorte e estratégia onde dois jogadores disputam quem acu
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **Next.js**(Framework)
+* **Next.js** (Framework)
 * **Vercel**
 
 ---
@@ -22,5 +22,5 @@ Um jogo competitivo de sorte e estratégia onde dois jogadores disputam quem acu
 
 ## 🔗 Links do Projeto
 
-* **Acesse o Site:** [Clique aqui para jogar]()
+* **Acesse o Site:** [Clique aqui para jogar](https://jogo-dados-teal.vercel.app)
 * **Assista no YouTube:** [Vídeo de demonstração]()
