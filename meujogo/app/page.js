@@ -98,6 +98,7 @@ export default function JogoDados() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-zinc-950 p-4 font-sans uppercase italic text-center">
       <div className="bg-black border-2 border-zinc-800 rounded-[3rem] p-12 w-full max-w-[850px] shadow-2xl relative">
+        
         <div className="flex justify-between items-center mb-8 px-4">
           <div className="text-left">
             <p className="text-zinc-500 text-xs font-black">PONTOS A</p>
