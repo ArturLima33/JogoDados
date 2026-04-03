@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Dado from '../components/dado';
+import Dado from './components/dado';
 
 export default function JogoDados() {
   const [rodada, setRodada] = useState(1);
@@ -42,15 +42,18 @@ export default function JogoDados() {
   const verificarFimRodada = (sA, sB) => {
     let proximoIniciante;
     if (sA > sB) {
-      setStatusA(`VENCEU (+${sA})`); setStatusB(`PERDEU`);
-      setPontosAcumuladosA(prev => prev + sA);
+      setStatusA(`VENCEU A RODADA!`); 
+      setStatusB(`PERDEU`);
+      setPontosAcumuladosA(prev => prev + 1);
       proximoIniciante = true;
     } else if (sB > sA) {
-      setStatusA(`PERDEU`); setStatusB(`VENCEU (+${sB})`);
-      setPontosAcumuladosB(prev => prev + sB);
+      setStatusA(`PERDEU`); 
+      setStatusB(`VENCEU A RODADA!`);
+      setPontosAcumuladosB(prev => prev + 1);
       proximoIniciante = false;
     } else {
-      setStatusA(`EMPATOU`); setStatusB(`EMPATOU`);
+      setStatusA(`EMPATOU`); 
+      setStatusB(`EMPATOU`);
       proximoIniciante = Math.random() < 0.5;
     }
     setQuemComecouEstaRodada(proximoIniciante);
@@ -100,12 +103,12 @@ export default function JogoDados() {
       <div className="bg-black border-2 border-zinc-800 rounded-[3rem] p-12 w-full max-w-[850px] shadow-2xl relative">
         <div className="flex justify-between items-center mb-8 px-4">
           <div className="text-left">
-            <p className="text-zinc-500 text-xs font-black">PONTOS A</p>
+            <p className="text-zinc-500 text-xs font-black">VITÓRIAS A</p>
             <p className="text-4xl font-black text-white">{pontosAcumuladosA}</p>
           </div>
           <h1 className="text-5xl font-black tracking-tighter text-white">Rodada {rodada}/5</h1>
           <div className="text-right">
-            <p className="text-zinc-500 text-xs font-black">PONTOS B</p>
+            <p className="text-zinc-500 text-xs font-black">VITÓRIAS B</p>
             <p className="text-4xl font-black text-white">{pontosAcumuladosB}</p>
           </div>
         </div>
