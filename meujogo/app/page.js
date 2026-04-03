@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Dado from './components/dado';
+import Dado from '../components/dado';
 
 export default function JogoDados() {
   const [rodada, setRodada] = useState(1);
