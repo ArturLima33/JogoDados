@@ -17,15 +17,15 @@ export default function JogoDados() {
   const [aguardandoProximaRodada, setAguardandoProximaRodada] = useState(false);
 
   useEffect(() => {
-    const sorteioInicial = Math.random() < 0.5;
-    setVezDoA(sorteioInicial);
-    setQuemComecouEstaRodada(sorteioInicial);
+    const sorteio = Math.random() < 0.5;
+    setVezDoA(sorteio);
+    setQuemComecouEstaRodada(sorteio);
   }, []);
 
   const rolar = () => Math.floor(Math.random() * 6) + 1;
 
   const reiniciarJogo = () => {
-    const proximo = pontosAcumuladosA > pontosAcumuladosB ? true : pontosAcumuladosB > pontosAcumuladosA ? false : Math.random() < 0.5;
+    const sorteioNovo = Math.random() < 0.5;
     setRodada(1);
     setDadosA([0, 0]);
     setDadosB([0, 0]);
@@ -35,8 +35,8 @@ export default function JogoDados() {
     setAguardandoProximaRodada(false);
     setStatusA("");
     setStatusB("");
-    setVezDoA(proximo);
-    setQuemComecouEstaRodada(proximo);
+    setVezDoA(sorteioNovo);
+    setQuemComecouEstaRodada(sorteioNovo);
   };
 
   const verificarFimRodada = (sA, sB) => {
@@ -154,7 +154,9 @@ export default function JogoDados() {
           <div className="bg-white text-black p-12 rounded-[2.5rem] shadow-2xl border-b-8 border-zinc-300">
             <p className="text-xs font-bold opacity-40 mb-2 tracking-widest">FIM DE JOGO</p>
             <h2 className="text-5xl font-black mb-4 tracking-tighter">
-              {pontosAcumuladosA > pontosAcumuladosB ? "VITÓRIA DO JOGADOR A!" : pontosAcumuladosB > pontosAcumuladosA ? "VITÓRIA DO JOGADOR B!" : "EMPATE GERAL!"}
+              {pontosAcumuladosA > pontosAcumuladosB ? "VITÓRIA DO JOGADOR A!" : 
+               pontosAcumuladosB > pontosAcumuladosA ? "VITÓRIA DO JOGADOR B!" : 
+               "EMPATE GERAL!"}
             </h2>
             <p className="text-2xl font-black mb-8 opacity-60">{pontosAcumuladosA} VS {pontosAcumuladosB}</p>
             <button onClick={reiniciarJogo} className="w-full py-5 bg-black text-white rounded-2xl font-black text-xl uppercase">Jogar Novamente</button>
