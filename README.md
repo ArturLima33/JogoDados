@@ -23,4 +23,4 @@ Um jogo competitivo de sorte e estratégia onde dois jogadores disputam quem acu
 ## 🔗 Links do Projeto
 
 * **Acesse o Site:** [Clique aqui para jogar](https://jogo-dados-teal.vercel.app)
-* **Assista no YouTube:** [Vídeo de demonstração]()
+* **Assista no YouTube:** [Vídeo de demonstração](https://www.youtube.com/watch?v=HaE9Mlv3kg0)
